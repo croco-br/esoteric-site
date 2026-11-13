@@ -2,6 +2,26 @@
   {
     "date": "2026-11-13",
     "scope": "app",
+    "macrostructure": "Narrative Workflow · Centered Long Document · Four-card Index",
+    "theme": "Midnight-inspired shared system",
+    "enrichment": "none",
+    "nav": "N5 unified navigation with direct Sound subroutes",
+    "footer": "Ft2 single-line statement",
+    "brief": "Align every module to Oracle UI patterns, unify navigation, center Sound tools and simplify home"
+  },
+  {
+    "date": "2026-11-13",
+    "scope": "app",
+    "macrostructure": "Ecosystem Index · Narrative Workflow · Long Document",
+    "theme": "Midnight-inspired shared system (paper band: dark · display: roman-serif · accent: cool violet)",
+    "enrichment": "none",
+    "nav": "N5 shared floating navigation",
+    "footer": "Ft2 single-line statement",
+    "brief": "Minimalist, consistent visual redesign across every Casa Arcana page"
+  },
+  {
+    "date": "2026-11-13",
+    "scope": "app",
     "macrostructure": "Ecosystem Index · Narrative Workflow · Long Document",
     "theme": "Midnight-inspired custom shared system",
     "enrichment": "none",

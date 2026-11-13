@@ -29,7 +29,7 @@ async function reading(event) {
 
             const questionElement = document.createElement('h3');
             questionElement.textContent = question;
-            questionElement.classList.add('has-text-centered', 'is-italic');
+            questionElement.classList.add('has-text-centered');
            
             const cardImage = document.createElement('img');
             const cardLink = document.createElement('a');
@@ -56,7 +56,7 @@ async function reading(event) {
             cardDescription.classList.add('has-text-weight-light', 'has-text-centered');
 
             const cardContainer = document.createElement('div');
-            cardContainer.classList.add('card', 'card-hover');
+            cardContainer.classList.add('card');
 
             cardContainer.appendChild(questionElement);
             cardContainer.appendChild(cardLink);

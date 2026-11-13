@@ -1,6 +1,6 @@
 // Shared audio-player + fetch helpers with client-side blob caching.
 
-export const audioPlayer = document.getElementById("audio-player");
+const audioPlayer = document.getElementById("audio-player");
 
 const urlCache = new Map();
 
@@ -11,7 +11,7 @@ export function stopAudio() {
     }
 }
 
-export async function fetchAudioUrl(noteName) {
+async function fetchAudioUrl(noteName) {
     if (urlCache.has(noteName)) {
         return urlCache.get(noteName);
     }
@@ -27,7 +27,7 @@ export async function fetchAudioUrl(noteName) {
     return audioUrl;
 }
 
-export function playAudio(audioUrl) {
+function playAudio(audioUrl) {
     audioPlayer.src = audioUrl;
     audioPlayer.loop = true;
     audioPlayer.controls = true;

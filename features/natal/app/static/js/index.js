@@ -388,7 +388,7 @@ const METHOD_INFO = {
 
 function helpIcon(method) {
     return ` <button type="button" class="method-help" title="O que é isto?" aria-label="Saber mais sobre este método" onclick="openMethodModal('${method}', this)">
-        <span class="ml-1 inline-flex text-sky-600"><i class="fa fa-question-circle"></i></span></button>`;
+        <span aria-hidden="true">?</span></button>`;
 }
 
 function methodModal(method) {

@@ -1,4 +1,4 @@
-export const spinner = document.getElementById("spinner");
+const spinner = document.getElementById("spinner");
 
 export function showSpinner() {
     if (spinner) {

@@ -1,18 +1,9 @@
-/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V5
- * Hallmark · genre: editorial · macrostructure: Long Document
- * H5 Letter knobs: salutation=time-stamp · body=3 paragraphs · signoff=initials
- * F4 Step sequence knobs: numbering=romans I/II/III · layout=vertical stack · connector=none
- * C1 Outlined chip knobs: shape=slab · density=spacious · adornment=none
- * N6 Masthead knobs: issue-line=below wordmark · wordmark=2xl · rule=double
- * Ft4 Dense colophon knobs: family=serif · layout=single block · includes=date+licence
- * theme: Almanac · paper: light oklch(96% 0.015 85) · accent: oxblood oklch(42% 0.14 30) <5% of viewport
- * display: Fraunces (roman) · body: EB Garamond · outlier: none
- * enrichment: none (typography only) · nav: N6 · footer: Ft4
- * slop: pass (42–45) · contrast: pass (40–41) · tokens: pass (48) · honest: pass (46) · icons: pass (30)
- * mobile: pass (34, 49, 50–57)
+/* Hallmark · macrostructure: Narrative Workflow · design-system: design.md · designed-as-app
+ * Shared atmospheric Midnight system · Newsreader + Geist · quiet rules and tonal surfaces
+ * Navigation: N5 shared pill · footer: Ft2 single-line statement · motion: functional only
  */
 @import url("tokens.css");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&display=swap");
 
 html {
   overflow-x: clip;
