@@ -1,0 +1,18 @@
+<header class="site-header">
+    <div class="container header-inner">
+        <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true"></span>
+            Casa Arcana
+        </a>
+        <nav class="site-nav" aria-label="Navegação principal">
+            <a href="/sound/" class="{% if current_page == 'chakras' %}is-active{% endif %}" {% if current_page == 'chakras' %}aria-current="page"{% endif %}>Sons</a>
+            <a href="/oracle/">Oráculo</a>
+            <a href="/natal/">Mapa astral</a>
+            <a href="/tarot/">Tarot</a>
+        </nav>
+    </div>
+</header>
+<nav class="feature-nav" aria-label="Ferramentas de som">
+    <a href="/sound/" {% if current_page == 'chakras' %}aria-current="page"{% endif %}>Chakras</a>
+    <a href="/sound/frequencies" {% if current_page == 'frequencies' %}aria-current="page"{% endif %}>Frequências</a>
+</nav>

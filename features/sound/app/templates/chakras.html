@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Chakras · Gerador de Sons{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('sound:static', path='css/chakras.css') }}">
+{% endblock %}
+
+{% block js %}
+<script type="module" src="{{ url_for('sound:static', path='js/chakras.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="container">
+        <h1 class="page-title">Sons dos Chakras</h1>
+        <p class="page-lede">Toque em um chakra na imagem ou escolha um na lista para gerar o som correspondente.
+            Cada frequência ressoa com um centro de energia diferente.</p>
+
+        <div class="chakra-layout">
+            <div class="image-map text-center">
+                <img src="/sound/static/img/chakras.jpg" alt="Ilustração dos sete chakras, do coronário ao básico"
+                    id="img-chakra" usemap="#soundMap" width="1000" height="700" class="thumbnail">
+                <map name="soundMap">
+                    <area shape="rect" coords="4,38,996,113" title="Sarashara" href="#" data-note="Sarashara">
+                    <area shape="rect" coords="4,117,990,184" title="Ajna" href="#" data-note="Ajna">
+                    <area shape="rect" coords="4,189,985,256" title="Vishuddha" href="#" data-note="Vishuddha">
+                    <area shape="rect" coords="4,262,988,328" title="Anahata" href="#" data-note="Anahata">
+                    <area shape="rect" coords="5,333,994,401" title="Manipura" href="#" data-note="Manipura">
+                    <area shape="rect" coords="5,406,996,472" title="Svadhishthana" href="#" data-note="Svadhishthana">
+                    <area shape="rect" coords="5,476,998,636" title="Muladhara" href="#" data-note="Muladhara">
+                </map>
+            </div>
+
+            <div class="chakra-quick-picks" role="group" aria-label="Escolher chakra">
+                <button type="button" class="chakra-chip" data-note="Sarashara">Sarashara</button>
+                <button type="button" class="chakra-chip" data-note="Ajna">Ajna</button>
+                <button type="button" class="chakra-chip" data-note="Vishuddha">Vishuddha</button>
+                <button type="button" class="chakra-chip" data-note="Anahata">Anahata</button>
+                <button type="button" class="chakra-chip" data-note="Manipura">Manipura</button>
+                <button type="button" class="chakra-chip" data-note="Svadhishthana">Svadhishthana</button>
+                <button type="button" class="chakra-chip" data-note="Muladhara">Muladhara</button>
+            </div>
+
+            <div id="loading-container">
+                <div class="audio-with-spinner">
+                    <audio id="audio-player" controls></audio>
+                    <div id="spinner" class="spinner" hidden></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

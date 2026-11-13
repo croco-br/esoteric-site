@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <header class="masthead">
+        <h1 class="masthead__wordmark">Oráculo Astrológico</h1>
+        <p class="masthead__issue">Três dados<span class="sep">·</span>Doze rodas<span class="sep">·</span>Uma resposta</p>
+        <div class="masthead__rules" aria-hidden="true"></div>
+    </header>
+
+    <main class="page">
+        <p class="lede">Desde a Antiguidade, quem tinha uma dúvida que não cabia em conselho de amigo recorria às rodas do céu: uma para os planetas, uma para os signos, uma para os números. Este oráculo conserva o rito. Escreva o que lhe pesa, gire as rodas e leia a tiragem como se lê um almanaque — devagar, com atenção ao que se repete.</p>
+
+        <h2 class="section-head">A consulta</h2>
+        <section class="consulta" aria-labelledby="consulta-titulo">
+            <h3 id="consulta-titulo" hidden>Sua situação</h3>
+            <label class="consulta__label" for="situacao">A situação</label>
+            <div class="consulta__field">
+                <input class="consulta__input" id="situacao" name="situacao" type="text"
+                       placeholder="Ex.: aceito a proposta de emprego?"
+                       maxlength="240" autocomplete="off">
+            </div>
+            <p class="consulta__helper" id="consulta-ajuda" data-role="hint" aria-live="polite">Uma frase basta. O oráculo lê a pergunta, não a gramática.</p>
+            <div class="consulta__row">
+                <button class="chip" id="consultar" type="button" onclick="rollDice()">Consultar os oráculos</button>
+            </div>
+        </section>
+
+        <section class="dados" aria-label="A tiragem">
+            <div class="dados__grid">
+                <div class="dado">
+                    <div class="dado__glyph" id="dado1-glyph" aria-hidden="true">?</div>
+                    <div class="dado__name" id="dado1-nome">Planetas</div>
+                    <div class="dado__desc" id="dado1-desc">a força que atravessa a questão</div>
+                </div>
+                <div class="dado">
+                    <div class="dado__glyph" id="dado2-glyph" aria-hidden="true">?</div>
+                    <div class="dado__name" id="dado2-nome">Signos</div>
+                    <div class="dado__desc" id="dado2-desc">o modo como ela se apresenta</div>
+                </div>
+                <div class="dado">
+                    <div class="dado__glyph" id="dado3-glyph" aria-hidden="true">?</div>
+                    <div class="dado__name" id="dado3-nome">Números</div>
+                    <div class="dado__desc" id="dado3-desc">a medida final da resposta</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leitura" id="leitura" aria-live="polite" hidden>
+            <p class="leitura__intro">A leitura</p>
+            <p class="leitura__text" id="leitura-texto"></p>
+        </section>
+
+        <p class="fleuron" aria-hidden="true">✳</p>
+
+        <h2 class="section-head">Os três dados</h2>
+        <section class="catalogo">
+            <p class="catalogo__intro">Cada roda tem doze entradas. Conheça-as antes de consultar — a leitura fica mais fina quando se sabe quem fala.</p>
+
+            <div class="roleta">
+                <h3 class="roleta__title">Planetas <span class="count">(12)</span></h3>
+                <ul class="roleta__list">
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">☉</span><span class="roleta__name">Sol</span><span class="roleta__desc">Vitalidade e aquilo que ilumina a questão.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">☽</span><span class="roleta__name">Lua</span><span class="roleta__desc">Intuição, memória e o que ainda não foi dito.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">☿</span><span class="roleta__name">Mercúrio</span><span class="roleta__desc">Palavras, contratos, viagens e recados.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♀</span><span class="roleta__name">Vênus</span><span class="roleta__desc">Afeição, acordos, prazer e o que se atrai.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♂</span><span class="roleta__name">Marte</span><span class="roleta__desc">Coragem, disputa e o impulso de agir.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♃</span><span class="roleta__name">Júpiter</span><span class="roleta__desc">Expansão, sorte generosa e conselhos de quem sabe mais.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♄</span><span class="roleta__name">Saturno</span><span class="roleta__desc">Tempo, limite, paciência e dívidas que vencem.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♅</span><span class="roleta__name">Urano</span><span class="roleta__desc">Ruptura, novidade e o imprevisto que reorganiza tudo.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♆</span><span class="roleta__name">Netuno</span><span class="roleta__desc">Sonho, fé e a névoa que embaralha os fatos.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♇</span><span class="roleta__name">Plutão</span><span class="roleta__desc">Fim de ciclo, poder e a verdade debaixo do tapete.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">☊</span><span class="roleta__name">Nodo Norte</span><span class="roleta__desc">O caminho que cresce quando você o segue.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">☋</span><span class="roleta__name">Nodo Sul</span><span class="roleta__desc">Hábitos antigos e o que se repete sem perceber.</span></li>
+                </ul>
+            </div>
+
+            <div class="roleta">
+                <h3 class="roleta__title">Signos <span class="count">(12)</span></h3>
+                <ul class="roleta__list">
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♈</span><span class="roleta__name">Áries</span><span class="roleta__desc">Começo impetuoso; melhor não esperar.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♉</span><span class="roleta__name">Touro</span><span class="roleta__desc">Passo firme; o valor está no que dura.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♊</span><span class="roleta__name">Gêmeos</span><span class="roleta__desc">Duas versões do mesmo caso; ouça as duas.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♋</span><span class="roleta__name">Câncer</span><span class="roleta__desc">Casa, família e o cuidado que sustenta.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♌</span><span class="roleta__name">Leão</span><span class="roleta__desc">Vista a coroa; a cena pede presença.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♍</span><span class="roleta__name">Virgem</span><span class="roleta__desc">O detalhe pequeno decide o todo.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♎</span><span class="roleta__name">Libra</span><span class="roleta__desc">Pesa os dois pratos antes de fechar.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♏</span><span class="roleta__name">Escorpião</span><span class="roleta__desc">Fundo do poço e a força de sair dele.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♐</span><span class="roleta__name">Sagitário</span><span class="roleta__desc">Horizonte largo; vale apostar longe.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♑</span><span class="roleta__name">Capricórnio</span><span class="roleta__desc">Escada degrau por degrau, sem pressa.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♒</span><span class="roleta__name">Aquário</span><span class="roleta__desc">O inesperado chega por pessoas diferentes.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">♓</span><span class="roleta__name">Peixes</span><span class="roleta__desc">Corrente subterrânea; confie no que se sente.</span></li>
+                </ul>
+            </div>
+
+            <div class="roleta">
+                <h3 class="roleta__title">Números <span class="count">(12)</span></h3>
+                <ul class="roleta__list">
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">1</span><span class="roleta__name">Um</span><span class="roleta__desc">Tudo começa por uma decisão sua.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">2</span><span class="roleta__name">Dois</span><span class="roleta__desc">Ninguém atravessa isso sozinho.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">3</span><span class="roleta__name">Três</span><span class="roleta__desc">Uma terceira via que ainda não apareceu.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">4</span><span class="roleta__name">Quatro</span><span class="roleta__desc">Fundamento, quatro paredes, trabalho lento.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">5</span><span class="roleta__name">Cinco</span><span class="roleta__desc">Mudança no meio do caminho; adapte-se.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">6</span><span class="roleta__name">Seis</span><span class="roleta__desc">Harmonia devolvida depois do atrito.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">7</span><span class="roleta__name">Sete</span><span class="roleta__desc">Recolhimento e estudo antes da resposta.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">8</span><span class="roleta__name">Oito</span><span class="roleta__desc">Colheita do que foi semeado — bom ou ruim.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">9</span><span class="roleta__name">Nove</span><span class="roleta__desc">Fim de capítulo; deixe o que cumpriu seu papel.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">10</span><span class="roleta__name">Dez</span><span class="roleta__desc">Ciclo completo; o próximo já se anuncia.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">11</span><span class="roleta__name">Onze</span><span class="roleta__desc">Aviso e segunda chance na mesma mensagem.</span></li>
+                    <li class="roleta__item"><span class="roleta__glyph" aria-hidden="true">12</span><span class="roleta__name">Doze</span><span class="roleta__desc">As doze casas: a roda inteira gira com você.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="colophon">
+            <p><span class="asterism">✳</span> Oráculo Astrológico — tiragem por três rodas de doze entradas: planetas, signos, números. Cada consulta sorteia uma entrada de cada roda e compõe a leitura. Servido por FastAPI; publicado em https://astro-oracle.onrender.com. O repositório é de domínio público, sob a licença UNLICENSE — gire as rodas, altere as senteças, faça seu almanaque.</p>
+        </footer>
+    </main>
+{% endblock %}

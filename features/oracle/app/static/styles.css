@@ -1,0 +1,424 @@
+/* Hallmark · pre-emit critique: P4 H5 E4 S4 R5 V5
+ * Hallmark · genre: editorial · macrostructure: Long Document
+ * H5 Letter knobs: salutation=time-stamp · body=3 paragraphs · signoff=initials
+ * F4 Step sequence knobs: numbering=romans I/II/III · layout=vertical stack · connector=none
+ * C1 Outlined chip knobs: shape=slab · density=spacious · adornment=none
+ * N6 Masthead knobs: issue-line=below wordmark · wordmark=2xl · rule=double
+ * Ft4 Dense colophon knobs: family=serif · layout=single block · includes=date+licence
+ * theme: Almanac · paper: light oklch(96% 0.015 85) · accent: oxblood oklch(42% 0.14 30) <5% of viewport
+ * display: Fraunces (roman) · body: EB Garamond · outlier: none
+ * enrichment: none (typography only) · nav: N6 · footer: Ft4
+ * slop: pass (42–45) · contrast: pass (40–41) · tokens: pass (48) · honest: pass (46) · icons: pass (30)
+ * mobile: pass (34, 49, 50–57)
+ */
+@import url("tokens.css");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap");
+
+html {
+  overflow-x: clip;
+}
+body {
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  font-variant-numeric: oldstyle-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Masthead · N6 newspaper ---- */
+.masthead {
+  padding: var(--space-xl) var(--space-md) 0;
+  text-align: center;
+}
+.masthead__wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw + 0.5rem, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.masthead__issue {
+  margin-top: var(--space-xs);
+  font-size: var(--text-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+  color: var(--color-muted);
+}
+.masthead__issue .sep {
+  margin-inline: var(--space-xs);
+  color: var(--color-accent);
+}
+.masthead__rules {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--color-ink);
+  border-bottom: 1px solid var(--color-ink);
+  height: 5px;
+}
+
+/* ---- Page · long document measure ---- */
+.page {
+  max-width: 66ch;
+  margin-inline: auto;
+  padding: var(--space-2xl) var(--space-md) var(--space-3xl);
+}
+
+/* ---- Lede ---- */
+.lede {
+  font-size: var(--text-md);
+  line-height: 1.5;
+  margin: 0 0 var(--space-lg);
+}
+.lede::first-letter {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.82;
+  padding-inline-end: var(--space-xs);
+  padding-block-start: 0.08em;
+  color: var(--color-ink);
+}
+
+/* ---- Inline section head (Long Document: emerges from prose flow) ---- */
+.section-head {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: var(--space-2xl) 0 var(--space-md);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.section-head::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--color-accent);
+  margin-top: var(--space-xs);
+}
+
+/* ---- Body prose ---- */
+.prose p {
+  margin: 0 0 var(--space-md);
+  max-width: 65ch;
+}
+.prose em {
+  font-style: italic;
+}
+
+/* ---- A consulta: the form ---- */
+.consulta {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--color-paper-2);
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+}
+.consulta__label {
+  display: block;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+}
+.consulta__field {
+  position: relative;
+}
+.consulta__input {
+  width: 100%;
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--radius);
+  outline: 2px solid transparent;
+  outline-offset: 1px;
+  transition: background-color var(--dur-short) var(--ease-out);
+}
+.consulta__input::placeholder {
+  color: var(--color-muted);
+  opacity: 1;
+}
+.consulta__input:hover {
+  background: var(--color-paper-3);
+}
+.consulta__input:focus-visible {
+  outline: 2px solid var(--color-focus);
+}
+.consulta__input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.consulta__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+.consulta__helper {
+  min-height: 1lh;
+  margin: var(--space-2xs) 0 0;
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-muted);
+}
+.consulta__helper[data-role="error"] {
+  font-style: normal;
+  color: var(--color-error);
+}
+.consulta__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* ---- C1 outlined chip (verb: Consultar os oráculos) ---- */
+.chip {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-base);
+  letter-spacing: 0.02em;
+  color: var(--color-accent-deep);
+  background: transparent;
+  border: 1.5px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-lg);
+  min-height: 44px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--dur-short) var(--ease-out),
+    color var(--dur-short) var(--ease-out),
+    transform 100ms var(--ease-out);
+}
+.chip:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+.chip:active {
+  transform: translateY(1px);
+}
+.chip:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+.chip:disabled,
+.chip[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+.chip[data-state="loading"] {
+  color: var(--color-muted);
+  border-color: var(--color-rule-2);
+  cursor: wait;
+}
+
+/* ---- The three dice ---- */
+.dados {
+  margin-top: var(--space-2xl);
+}
+.dados__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+}
+@media (min-width: 48rem) {
+  .dados__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.dado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--color-rule);
+}
+.dado__glyph {
+  font-size: var(--text-glyph);
+  line-height: 1;
+  color: var(--color-ink);
+  min-height: 1.2em;
+  display: grid;
+  place-items: center;
+}
+.dado__glyph.is-shuffling {
+  opacity: 0.35;
+}
+.dado__glyph.is-settled {
+  animation: settle var(--dur-long) var(--ease-out);
+}
+.dado__name {
+  margin-top: var(--space-xs);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  line-height: 1.2;
+}
+.dado__desc {
+  margin-top: var(--space-2xs);
+  font-size: var(--text-sm);
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--color-muted);
+  max-width: 24ch;
+}
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- The reading ---- */
+.leitura {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+}
+.leitura[hidden] {
+  display: none;
+}
+.leitura__intro {
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-sm);
+}
+.leitura__text {
+  font-size: var(--text-md);
+  line-height: 1.55;
+  margin: 0;
+}
+.leitura__text em {
+  font-style: italic;
+}
+
+/* ---- Fleuron divider ---- */
+.fleuron {
+  text-align: center;
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+  margin: var(--space-2xl) 0 0;
+  line-height: 1;
+}
+
+/* ---- Catalogue: os três dados ---- */
+.catalogo {
+  margin-top: var(--space-xl);
+}
+.catalogo__intro {
+  font-style: italic;
+  color: var(--color-muted);
+  margin: 0 0 var(--space-lg);
+}
+.roleta {
+  margin-bottom: var(--space-xl);
+}
+.roleta:last-child {
+  margin-bottom: 0;
+}
+.roleta__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-md);
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+.roleta__title .count {
+  color: var(--color-muted);
+  font-weight: 300;
+}
+.roleta__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+.roleta__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.roleta__glyph {
+  font-size: var(--text-md);
+  line-height: 1;
+  min-width: 2.4rem;
+  text-align: center;
+  color: var(--color-ink);
+}
+.roleta__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  min-width: 7.5ch;
+}
+.roleta__desc {
+  flex: 1 1 20ch;
+  font-size: var(--text-sm);
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+/* ---- Colophon · Ft4 dense typographic ---- */
+.colophon {
+  margin-top: var(--space-3xl);
+  border-top: 3px double var(--color-ink);
+  padding-top: var(--space-lg);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+.colophon p {
+  margin: 0;
+  max-width: 65ch;
+}
+.colophon .asterism {
+  color: var(--color-accent);
+}
+
+/* ---- Focus & motion fallbacks ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 150ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+  }
+  .dado__glyph.is-settled {
+    animation: none;
+    opacity: 1;
+  }
+}

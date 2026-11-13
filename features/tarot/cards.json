@@ -1,0 +1,550 @@
+{
+    "tarot_cards": [
+        {
+            "name": "O Eremita",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/09-TheHermit.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Eremita_(Tarot)",
+            "description": "Busca interior e sabedoria."
+        },
+        {
+            "name": "O Hierofante",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/05-TheHierophant.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Hierofante_(Tarot)",
+            "description": "Tradição, ensinamento e conformidade."
+        },
+        {
+            "name": "Rainha de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords13.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rainha_de_Espadas",
+            "description": "Claridade mental e independência."
+        },
+        {
+            "name": "A Carruagem",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/07-TheChariot.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Carro_(Tarot)",
+            "description": "Vitória através de controle e determinação."
+        },
+        {
+            "name": "Cavaleiro de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles12.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cavaleiro_de_Moedas",
+            "description": "Foco, equilíbrio, construção."
+        },
+        {
+            "name": "Seis de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands06.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Seis_de_Bast%C3%B5es",
+            "description": "Sucesso e reconhecimento."
+        },
+        {
+            "name": "Seis de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles06.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Seis_de_Moedas",
+            "description": "Compartilhar, generosidade, caridade."
+        },
+        {
+            "name": "Quatro de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords04.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Quatro_de_Espadas",
+            "description": "Meditação, afastamento, solidão."
+        },
+        {
+            "name": "Nove de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles09.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Nove_de_Moedas",
+            "description": "Conforto e sucesso material."
+        },
+        {
+            "name": "O Julgamento",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/20-Judgement.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Julgamento_(Tarot)",
+            "description": "Renovação, julgamento, instrospecção, autoavaliação."
+        },
+        {
+            "name": "A Torre",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/16-TheTower.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Torre_(Tarot)",
+            "description": "Insegurança, mudanças, revelações, rupturas."
+        },
+        {
+            "name": "A Justiça",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/11-Justice.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Justi%C3%A7a_(Tarot)",
+            "description": "Imparcialidade, equilibrio."
+        },
+        {
+            "name": "As de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles01.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/%C3%81s_de_Moedas",
+            "description": "Novos começos financeiros e sucesso material."
+        },
+        {
+            "name": "Valete de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands11.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Princesa_de_Bast%C3%B5es",
+            "description": "Inspiração e entusiasmo."
+        },
+        {
+            "name": "A Temperança",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/14-Temperance.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Temperan%C3%A7a_(Tarot)",
+            "description": "Equilíbrio e moderação."
+        },
+        {
+            "name": "Seis de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups06.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Seis_de_Ta%C3%A7as",
+            "description": "Memórias e nostalgia."
+        },
+        {
+            "name": "Três de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles03.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Tr%C3%AAs_de_Moedas",
+            "description": "Trabalho em equipe e colaboração."
+        },
+        {
+            "name": "O Mago",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/01-TheMagician.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Mago_(Tarot)",
+            "description": "Habilidade e manifestação."
+        },
+        {
+            "name": "Os Amantes",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/06-TheLovers.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Os_Enamorados_(Tarot)",
+            "description": "Relacionamentos e escolhas."
+        },
+        {
+            "name": "O Diabo",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/15-TheDevil.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Diabo_(Tarot)",
+            "description": "Vícios e materialismo."
+        },
+        {
+            "name": "Quatro de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups04.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Quatro_de_Ta%C3%A7as",
+            "description": "Descontentamento e introspecção."
+        },
+        {
+            "name": "Rei de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands14.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rei_de_Bast%C3%B5es",
+            "description": "Liderança e visão."
+        },
+        {
+            "name": "Sete de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups07.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Sete_de_Ta%C3%A7as",
+            "description": "Ilusões e escolhas."
+        },
+        {
+            "name": "A Sacerdotisa",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/02-TheHighPriestess.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Sacerdotisa_(Tarot)",
+            "description": "Intuição e conhecimento interior."
+        },
+        {
+            "name": "O Louco",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/00-TheFool.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Louco_(Tarot)",
+            "description": "Novos começos e aventura."
+        },
+        {
+            "name": "Dois de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords02.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dois_de_Espadas",
+            "description": "Escolhas e bloqueios emocionais."
+        },
+        {
+            "name": "Cinco de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands05.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cinco_de_Bast%C3%B5es",
+            "description": "Conflito e competição."
+        },
+        {
+            "name": "O Sol",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/19-TheSun.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Sol_(Tarot)",
+            "description": "Alegria e sucesso."
+        },
+        {
+            "name": "Cinco de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords05.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cinco_de_Espadas",
+            "description": "Conflito e perda."
+        },
+        {
+            "name": "Rei de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups14.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rei_de_Ta%C3%A7as",
+            "description": "Compaixão e controle emocional."
+        },
+        {
+            "name": "Dois de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups02.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dois_de_Ta%C3%A7as",
+            "description": "Parceria e união."
+        },
+        {
+            "name": "O Mundo",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/21-TheWorld.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Mundo_(Tarot)",
+            "description": "Conclusão e realização."
+        },
+        {
+            "name": "Valete de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords11.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Princesa_de_Espadas",
+            "description": "Curiosidade e vigilância."
+        },
+        {
+            "name": "As de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords01.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/%C3%81s_de_Espadas",
+            "description": "Verdades e clareza."
+        },
+        {
+            "name": "Sete de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles07.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Sete_de_Moedas",
+            "description": "Paciência e avaliação."
+        },
+        {
+            "name": "Nove de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands09.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Nove_de_Bast%C3%B5es",
+            "description": "Resiliência e defesa."
+        },
+        {
+            "name": "Dois de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles02.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dois_de_Moedas",
+            "description": "Equilíbrio e adaptação."
+        },
+        {
+            "name": "Cavaleiro de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands12.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cavaleiro_de_Bast%C3%B5es",
+            "description": "Energia e entusiasmo."
+        },
+        {
+            "name": "Três de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords03.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Tr%C3%AAs_de_Espadas",
+            "description": "Dor emocional e separação."
+        },
+        {
+            "name": "Dez de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups10.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dez_de_Ta%C3%A7as",
+            "description": "Harmonia e felicidade familiar."
+        },
+        {
+            "name": "Sete de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords07.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Sete_de_Espadas",
+            "description": "Estratégia e engano."
+        },
+        {
+            "name": "Valete de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups11.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Princesa_de_Ta%C3%A7as",
+            "description": "Criatividade e sensibilidade."
+        },
+        {
+            "name": "Rainha de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands13.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rainha_de_Bast%C3%B5es",
+            "description": "Confiança e carisma."
+        },
+        {
+            "name": "Três de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups03.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Tr%C3%AAs_de_Ta%C3%A7as",
+            "description": "Celebração e amizade."
+        },
+        {
+            "name": "Rei de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords14.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rei_de_Espadas",
+            "description": "Autoridade e lógica."
+        },
+        {
+            "name": "Rei de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles14.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rei_de_Moedas",
+            "description": "Segurança e sucesso material."
+        },
+        {
+            "name": "Cinco de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles05.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cinco_de_Moedas",
+            "description": "Dificuldades e perda."
+        },
+        {
+            "name": "Cavaleiro de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords12.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cavaleiro_de_Espadas",
+            "description": "Ação rápida e impetuosa."
+        },
+        {
+            "name": "Quatro de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands04.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Quatro_de_Bast%C3%B5es",
+            "description": "Estabilidade e celebração."
+        },
+        {
+            "name": "Quatro de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles04.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Quatro_de_Moedas",
+            "description": "Segurança e controle financeiro."
+        },
+        {
+            "name": "As de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands01.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/%C3%81s_de_Bast%C3%B5es",
+            "description": "Novas ideias e inspiração."
+        },
+        {
+            "name": "Seis de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords06.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Seis_de_Espadas",
+            "description": "Transição e mudança."
+        },
+        {
+            "name": "Oito de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands08.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Oito_de_Bast%C3%B5es",
+            "description": "Movimento rápido e progresso."
+        },
+        {
+            "name": "Oito de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups08.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Oito_de_Ta%C3%A7as",
+            "description": "Desapontamento e busca por algo melhor."
+        },
+        {
+            "name": "Dois de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands02.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dois_de_Bast%C3%B5es",
+            "description": "Planejamento e visão de futuro."
+        },
+        {
+            "name": "Oito de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles08.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Oito_de_Moedas",
+            "description": "Trabalho árduo e perfeição."
+        },
+        {
+            "name": "A Lua",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/18-TheMoon.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Lua_(Tarot)",
+            "description": "Intuição e ilusões."
+        },
+        {
+            "name": "Dez de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords10.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dez_de_Espadas",
+            "description": "Ansiedade, preocupações, fins dolorosos."
+        },
+        {
+            "name": "Cinco de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups05.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cinco_de_Ta%C3%A7as",
+            "description": "Arrependimento e tristeza."
+        },
+        {
+            "name": "O Imperador",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/04-TheEmperor.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Imperador_(Tarot)",
+            "description": "Autoridade e estabilidade."
+        },
+        {
+            "name": "A Roda da Fortuna",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/10-WheelOfFortune.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Roda_da_Fortuna_(Tarot)",
+            "description": "Mudança e ciclos de vida."
+        },
+        {
+            "name": "A Imperatriz",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/03-TheEmpress.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Imperatriz_(Tarot)",
+            "description": "Fertilidade e abundância."
+        },
+        {
+            "name": "Valete de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles11.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Princesa_de_Moedas",
+            "description": "Estudo e aplicação prática."
+        },
+        {
+            "name": "A Estrela",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/17-TheStar.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Estrela_(Tarot)",
+            "description": "Esperança e inspiração."
+        },
+        {
+            "name": "Dez de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands10.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dez_de_Bast%C3%B5es",
+            "description": "Sobrecarregado e responsabilidades."
+        },
+        {
+            "name": "As de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups01.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/%C3%81s_de_Ta%C3%A7as",
+            "description": "Novas emoções e conexões."
+        },
+        {
+            "name": "Dez de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles10.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Dez_de_Moedas",
+            "description": "Sucesso financeiro e legado."
+        },
+        {
+            "name": "A Morte",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/13-Death.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_Morte_(Tarot)",
+            "description": "Transformação e finais."
+        },
+        {
+            "name": "A Força",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/08-Strength.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/A_For%C3%A7a_(Tarot)",
+            "description": "Coragem e força interior."
+        },
+        {
+            "name": "O Enforcado",
+            "arcana": "Maior",
+            "image_link": "/static/img/cards/12-TheHangedMan.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/O_Enforcado_(Tarot)",
+            "description": "Sacrifício e novas perspectivas."
+        },
+        {
+            "name": "Nove de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords09.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Nove_de_Espadas",
+            "description": "Pesar e sofrimento."
+        },
+        {
+            "name": "Três de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands03.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Tr%C3%AAs_de_Bast%C3%B5es",
+            "description": "Visão e expansão."
+        },
+        {
+            "name": "Rainha de Moedas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Pentacles13.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rainha_de_Moedas",
+            "description": "Nutridora, generosidade e praticidade."
+        },
+        {
+            "name": "Oito de Espadas",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Swords08.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Oito_de_Espadas",
+            "description": "Sentimentos de aprisionamento e opressão."
+        },
+        {
+            "name": "Sete de Bastões",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Wands07.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Sete_de_Bast%C3%B5es",
+            "description": "Defesa e resistência."
+        },
+        {
+            "name": "Nove de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups09.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Nove_de_Ta%C3%A7as",
+            "description": "Satisfação e realização emocional."
+        },
+        {
+            "name": "Rainha de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups13.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Rainha_de_Ta%C3%A7as",
+            "description": "Empatia e compreensão."
+        },
+        {
+            "name": "Cavaleiro de Taças",
+            "arcana": "Menor",
+            "image_link": "/static/img/cards/Cups12.jpg",
+            "link": "https://wiki.deldebbio.com.br/index.php/Cavaleiro_de_Ta%C3%A7as",
+            "description": "Romantismo e idealismo."
+        }
+    ]
+}

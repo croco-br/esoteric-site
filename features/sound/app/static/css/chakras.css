@@ -1,0 +1,70 @@
+# Chakras page
+
+.page-lede {
+    margin-bottom: var(--space-8);
+}
+
+.chakra-layout {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.image-map {
+    position: relative;
+}
+
+.image-map .thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--color-border);
+}
+
+.chakra-quick-picks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+    margin-block: var(--space-4) var(--space-6);
+}
+
+.chakra-chip {
+    appearance: none;
+    cursor: pointer;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-l);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.chakra-chip:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    background: var(--color-surface-raised);
+    transform: translateY(-1px);
+}
+
+.chakra-chip:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.chakra-chip:active {
+    transform: translateY(1px);
+}
+
+.chakra-chip:disabled {
+    cursor: progress;
+    opacity: 0.6;
+}
+
+.chakra-chip.is-playing {
+    color: var(--color-accent-contrast);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Frequências · Gerador de Sons{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('sound:static', path='css/frequencies.css') }}">
+{% endblock %}
+
+{% block js %}
+<script type="module" src="{{ url_for('sound:static', path='js/frequencies.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="container">
+        <h1 class="page-title">Frequências</h1>
+        <p class="page-lede">Escolha uma frequência — solfeggio, batidas binaurais, tons de chakra ou planetárias —
+            e gere o áudio.</p>
+
+        <div class="freq-layout">
+            <label class="field-label" for="frequency-select">Frequência</label>
+            <select id="frequency-select" class="custom-select">
+                <optgroup label="Frequências Solfeggio">
+                    <option value="Liberating">Frequência libertadora: 396 Hz</option>
+                    <option value="Resonating">Frequência ressonante: 417 Hz</option>
+                    <option value="Love">Frequência do amor: 528 Hz</option>
+                    <option value="Connecting">Frequência de conexão: 639 Hz</option>
+                    <option value="Awakening">Frequência de despertar: 741 Hz</option>
+                    <option value="Intuition">Frequência da intuição: 852 Hz</option>
+                    <option value="Foundation">Frequência de fundação: 174 Hz</option>
+                    <option value="Healing">Frequência de cura: 285 Hz</option>
+                    <option value="Universe">Frequência do universo: 963 Hz</option>
+                    <option value="Spiritual">Frequência espiritual: 1074 Hz</option>
+                    <option value="Balance">Frequência de equilíbrio: 1174 Hz</option>
+                    <option value="Purification">Purificação espiritual: 1152 Hz</option>
+                    <option value="Enlightenment">Iluminação espiritual: 2172 Hz</option>
+                </optgroup>
+                <optgroup label="Batidas Binaurais">
+                    <option value="Delta">Delta (1-4 Hz): Sono profundo e relaxamento</option>
+                    <option value="Theta">Theta (4-8 Hz): Meditação, criatividade, relaxamento profundo</option>
+                    <option value="Alpha">Alpha (8-12 Hz): Relaxamento, meditação, clareza mental</option>
+                    <option value="Beta">Beta (12-30 Hz): Alerta, foco, concentração</option>
+                    <option value="Gamma">Gamma (30-100 Hz): Consciência elevada</option>
+                </optgroup>
+                <optgroup label="Frequências dos Tons dos Chakras">
+                    <option value="Muladhara2">Chakra Raiz (Muladhara): 396 Hz</option>
+                    <option value="Svadhishthana2">Chakra Sacral (Svadhisthana): 417 Hz</option>
+                    <option value="Manipura2">Chakra do Plexo Solar (Manipura): 528 Hz</option>
+                    <option value="Anahata2">Chakra do Coração (Anahata): 639 Hz</option>
+                    <option value="Vishuddha2">Chakra da Garganta (Vishuddha): 741 Hz</option>
+                    <option value="Ajna2">Chakra do Terceiro Olho (Ajna): 852 Hz</option>
+                    <option value="Sarashara2">Chakra Coronário (Sahasrara): 963 Hz</option>
+                </optgroup>
+                <optgroup label="Outras Frequências de Cura">
+                    <option value="Schumann">Ressonância de Schumann: 7.83 Hz</option>
+                    <option value="Tesla">Nikola Tesla: Permutações de 3-6-9 Hz</option>
+                    <option value="Angels">Frequências dos Anjos: 111–888 Hz</option>
+                    <option value="Earth">Terra: 126.22 Hz</option>
+                    <option value="Moon">Lua: 210.42 Hz</option>
+                    <option value="Mercury">Mercúrio: 141.27 Hz</option>
+                    <option value="Mars">Marte: 144.72 Hz</option>
+                    <option value="Venus">Vênus: 221.23 Hz</option>
+                    <option value="Jupiter">Júpiter: 183.58 Hz</option>
+                    <option value="Saturn">Saturno: 147.85 Hz</option>
+                    <option value="Uranus">Urano: 207.36 Hz</option>
+                    <option value="Neptune">Netuno: 211.44 Hz</option>
+                    <option value="Pluto">Plutão: 140.25 Hz</option>
+                </optgroup>
+            </select>
+
+            <div class="text-center">
+                <button type="button" id="loading-button" class="btn-generate" data-state="default">Gerar</button>
+            </div>
+
+            <div id="loading-container">
+                <audio id="audio-player" controls></audio>
+                <div id="spinner" class="spinner" hidden></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

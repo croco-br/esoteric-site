@@ -1,0 +1,8 @@
+fastapi==0.115.0
+uvicorn==0.31.0
+Jinja2==3.1.6
+numpy>=1.24
+scipy>=1.13
+geopy==2.4.1
+kerykeion==4.2.4
+timezonefinder==8.2.4

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot · Casa Arcana</title>
+    <link rel="stylesheet" href="/site.css">
+    <script src="/tarot/static/js/index.js" defer></script>
+</head>
+
+<body>
+    <nav class="unified-nav" aria-label="Navegação principal">
+        <a href="/sound/">Sons</a>
+        <a href="/oracle/">Oráculo</a>
+        <a href="/natal/">Mapa astral</a>
+        <a href="/tarot/" aria-current="page">Tarot</a>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <div class="box tarot-container">
+                <!-- Seleção de tipo de leitura -->
+                <div class="field tarot-settings">
+                    <label class="label" for="readingType">Escolha a leitura:</label>
+                    <div class="control">
+                        <div class="select">
+                            <select id="readingType">
+                                <option value="one-card">Resposta para uma pergunta (1 carta)</option>
+                                <option value="past-present-future">Passado, Presente e Futuro (3 Cartas)</option>
+                                <option value="question-influence">Pergunta, influência e conselho (3 Cartas)</option>
+                                <option value="spiritual-guidance">Orientação Espiritual (3 Cartas)</option>
+                                <option value="health">Saúde (3 Cartas)</option>
+                                <option value="decision">Decisão (3 Cartas)</option>
+                                <option value="finance">Finanças (3 Cartas)</option>
+                                <option value="self-discovery">Auto-Descoberta (3 Cartas)</option>
+                                <option value="career">Carreira (4 Cartas)</option>
+                                <option value="relationship">Relacionamento (4 Cartas)</option>
+                                <option value="celtic-cross">Cruz Celta (10 Cartas)</option>
+                                <option value="astrological-mandala">Mandala Astrológica (12 Cartas)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary is-medium" id="drawCardButton" onclick="reading(event)">
+                            Sortear Cartas
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-display columns is-multiline" id="cardDisplay">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

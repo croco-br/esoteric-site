@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mapa Astral</title>
+    <link rel="stylesheet" href="{{ static_url(request, 'css/app.css') }}">
+    <link rel="stylesheet" href="/site.css">
+    <script src="{{ static_url(request, 'js/natal.js') }}" defer></script>
+    <script src="{{ static_url(request, 'js/sephiroth.js') }}" defer></script>
+    <script src="{{ static_url(request, 'js/index.js') }}" defer></script>
+</head>
+<body class="site-shell">
+    <header class="masthead">
+        <p class="masthead-kicker">Estudo astral · cálculo sem registo</p>
+        <a class="wordmark" href="/">Casa Arcana · Mapa Astral</a>
+        <nav class="mastnav" aria-label="Navegação principal">
+            <a href="/sound/" class="mastnav-link">Sons</a>
+            <a href="/oracle/" class="mastnav-link">Oráculo</a>
+            <a href="/natal/" class="mastnav-link mastnav-link-active" aria-current="page">Mapa astral</a>
+            <a href="/tarot/" class="mastnav-link">Tarot</a>
+        </nav>
+        <nav class="feature-nav" aria-label="Ferramentas do mapa astral">
+            <a href="/natal/" aria-current="page">Calcular</a>
+            <a href="/natal/glossary">Glossário</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="observatory" aria-labelledby="page-title">
+            <div class="observatory-intro">
+                <p class="kicker">Um momento, cinco lentes</p>
+                <h1 id="page-title">Leia o céu de um momento específico.</h1>
+                <p class="lede">Data, hora e lugar situam o mapa. Depois, escolha a tradição que quer usar para percorrê-lo.</p>
+                <div class="zodiac-key" aria-label="Os doze signos do zodíaco" aria-hidden="true">♈ · ♉ · ♊ · ♋ · ♌ · ♍ · ♎ · ♏ · ♐ · ♑ · ♒ · ♓</div>
+                <p class="privacy-note">Os dados existem apenas durante este cálculo. Nada é guardado.</p>
+            </div>
+
+            <div class="birth-record">
+                <div class="record-heading">
+                    <p class="kicker">Registo de nascimento</p>
+                    <p>Indique o momento com o maior rigor disponível.</p>
+                </div>
+                <form onsubmit="calculate(); return false;">
+                    <fieldset class="form-group">
+                        <legend>Identidade</legend>
+                        <label class="field-label" for="name">Nome <span>opcional</span></label>
+                        <input class="input" type="text" id="name" placeholder="Como quer ser identificado na leitura">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Momento</legend>
+                        <div class="field-pair">
+                            <div>
+                                <label class="field-label" for="birthdate">Data de nascimento</label>
+                                <input class="input" type="date" id="birthdate" required>
+                            </div>
+                            <div>
+                                <label class="field-label" for="birthtime">Hora de nascimento</label>
+                                <input class="input" type="time" id="birthtime" required>
+                            </div>
+                        </div>
+                        <p class="field-help">A hora permite calcular Ascendente e casas.</p>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <legend>Lugar</legend>
+                        <label class="field-label" for="city">Cidade e país</label>
+                        <input class="input" type="text" id="city" placeholder="Ex.: Porto, Portugal" required>
+                        <p class="field-help">O lugar resolve a zona horária e a posição geográfica.</p>
+                    </fieldset>
+
+                    <fieldset class="lens-fieldset">
+                        <legend>Escolha uma lente de leitura</legend>
+                        <p class="lens-intro">Cada método revela a mesma carta por uma organização distinta.</p>
+                        <div class="method-grid" role="radiogroup" aria-label="Método de cálculo">
+                            <label class="method-option"><input type="radio" name="method-choice" value="traditional" checked onchange="selectMethod(this.value)"><span class="method-index">I</span><span><strong>Mapa natal</strong><small>Roda, posições e aspectos.</small></span></label>
+                            <label class="method-option"><input type="radio" name="method-choice" value="hermetic" onchange="selectMethod(this.value)"><span class="method-index">II</span><span><strong>Tarot hermético</strong><small>Setores e títulos de Tarot.</small></span></label>
+                            <label class="method-option"><input type="radio" name="method-choice" value="angels" onchange="selectMethod(this.value)"><span class="method-index">III</span><span><strong>Anjos regentes</strong><small>Anjo de cada ponto natal.</small></span></label>
+                            <label class="method-option"><input type="radio" name="method-choice" value="sephiroth" onchange="selectMethod(this.value)"><span class="method-index">IV</span><span><strong>Árvore da Vida</strong><small>Planetas nas Sephiroth.</small></span></label>
+                            <label class="method-option"><input type="radio" name="method-choice" value="agathadaimon" onchange="selectMethod(this.value)"><span class="method-index">V</span><span><strong>Anjo guardião</strong><small>Nome e caminho do Agathadaimon.</small></span></label>
+                        </div>
+                        <select id="method" name="options" class="sr-only" aria-hidden="true" tabindex="-1">
+                            <option value="traditional" selected>Astrologia Tradicional</option>
+                            <option value="hermetic">Astrologia Hermética</option>
+                            <option value="angels">Anjos Cabalísticos</option>
+                            <option value="sephiroth">Astrologia Cabalística</option>
+                            <option value="agathadaimon">Agathadaimon</option>
+                        </select>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button id="calculate-button" class="btn-primary" type="submit">Abrir leitura</button>
+                        <button class="btn-ghost" type="button" onclick="fillExample()">Preencher personalidade aleatória</button>
+                    </div>
+                    <p id="method-description" class="method-description">Mapa natal · roda, posições e aspectos.</p>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <section id="result" class="result-stage" aria-live="polite"></section>
+    </main>
+
+    <footer class="foot-mast">
+        <p class="wordmark">Mapa Astral</p>
+        <p>Astrologia, Cabala e Tarot como instrumentos de estudo.</p>
+        <p><a href="/natal/">Calcular</a> · <a href="/natal/glossary">Consultar glossário</a></p>
+    </footer>
+</body>
+</html>

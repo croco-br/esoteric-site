@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Glossário — Mapa Astral</title>
+    <link rel="stylesheet" href="{{ static_url(request, 'css/app.css') }}">
+    <link rel="stylesheet" href="/site.css">
+    <script>window.GLOSSARY = {{ glossary | tojson }};</script>
+    <script src="{{ static_url(request, 'js/glossary.js') }}" defer></script>
+</head>
+<body class="site-shell library-shell">
+    <header class="masthead">
+        <p class="masthead-kicker">Índice de referências esotéricas</p>
+        <a class="wordmark" href="/">Casa Arcana · Mapa Astral</a>
+        <nav class="mastnav" aria-label="Navegação principal">
+            <a href="/sound/" class="mastnav-link">Sons</a>
+            <a href="/oracle/" class="mastnav-link">Oráculo</a>
+            <a href="/natal/" class="mastnav-link mastnav-link-active">Mapa astral</a>
+            <a href="/tarot/" class="mastnav-link">Tarot</a>
+        </nav>
+        <nav class="feature-nav" aria-label="Ferramentas do mapa astral">
+            <a href="/natal/">Calcular</a>
+            <a href="/natal/glossary" aria-current="page">Glossário</a>
+        </nav>
+    </header>
+    <main class="library-main">
+        <section class="library-intro" aria-labelledby="glossary-title">
+            <p class="kicker">Biblioteca de consulta</p>
+            <h1 id="glossary-title">Glossário Esotérico</h1>
+            <p class="lede">Conceitos de astrologia, Cabala, Tarot hermético e anjos do Shem HaMephorash.</p>
+            <div class="library-search">
+                <label class="sr-only" for="glossary-search">Pesquisar no glossário</label>
+                <input class="input" type="search" id="glossary-search" placeholder="Pesquisar Vehuiah, Tiferet, Sol em Áries…" oninput="filterGlossary()">
+                <button class="btn-ghost" type="button" onclick="clearGlossarySearch()" aria-label="Limpar pesquisa">Limpar</button>
+            </div>
+        </section>
+
+        <section class="library-layout">
+            <div class="library-mobile-picker">
+                <label class="field-label" for="glossary-section-picker">Seção</label>
+                <select id="glossary-section-picker" class="input" onchange="showSection(this.value)">
+                    <option value="planets">Planetas</option><option value="signs">Signos</option><option value="combinations">Planeta + Signo</option><option value="aspects">Aspectos</option><option value="aspect_combinations">Planeta + Aspecto</option><option value="kabbalah">Cabala & Sephiroth</option><option value="tarot">Tarot Hermético (24)</option><option value="angels">72 Anjos</option><option value="agathadaimon">Agathadaimon</option>
+                </select>
+            </div>
+            <aside class="library-index" aria-label="Seções do glossário">
+                <p>Índice</p>
+                <ul id="glossary-nav">
+                    <li><button type="button" class="glossary-nav-link glossary-nav-active" aria-current="page" onclick="showSection('planets', this)">01 Planetas</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('signs', this)">02 Signos</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('combinations', this)">03 Planeta + Signo</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('aspects', this)">04 Aspectos</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('aspect_combinations', this)">05 Planeta + Aspecto</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('kabbalah', this)">06 Cabala & Sephiroth</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('tarot', this)">07 Tarot Hermético</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('angels', this)">08 72 Anjos</button></li>
+                    <li><button type="button" class="glossary-nav-link" onclick="showSection('agathadaimon', this)">09 Agathadaimon</button></li>
+                </ul>
+            </aside>
+            <div class="library-content-wrap"><div id="glossary-search-status" class="sr-only" aria-live="polite"></div><div id="glossary-content"></div></div>
+        </section>
+    </main>
+    <footer class="foot-mast"><p class="wordmark">Mapa Astral</p><p>Um vocabulário para leituras mais cuidadosas.</p><p><a href="/natal/">Voltar ao cálculo</a></p></footer>
+</body>
+</html>

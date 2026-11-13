@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Oráculo Astrológico{% endblock %}</title>
+    <link rel="stylesheet" href="/oracle/static/styles.css">
+    <link rel="stylesheet" href="/site.css">
+    <script src="/oracle/static/script.js" defer></script>
+</head>
+<body>
+    <nav class="unified-nav" aria-label="Navegação principal">
+        <a href="/sound/">Sons</a>
+        <a href="/oracle/" aria-current="page">Oráculo</a>
+        <a href="/natal/">Mapa astral</a>
+        <a href="/tarot/">Tarot</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
