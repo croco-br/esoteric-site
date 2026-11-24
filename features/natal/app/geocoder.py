@@ -43,7 +43,7 @@ def resolve_location(city):
     try:
         location = geolocator.geocode(city)
     except GeocoderServiceError as exc:
-        raise ConnectionError("Location service is temporarily unavailable") from exc
+        raise ConnectionError("Serviço de localização temporariamente indisponível. Tente novamente em instantes.") from exc
     if location is None:
         raise LookupError("Não foi possível localizar a cidade informada.")
 
@@ -51,7 +51,7 @@ def resolve_location(city):
     try:
         tz = _tf.timezone_at(lng=lon, lat=lat)
     except Exception as exc:
-        raise ConnectionError("Location service is temporarily unavailable") from exc
+        raise ConnectionError("Serviço de localização temporariamente indisponível. Tente novamente em instantes.") from exc
     if tz is None:
         raise LookupError("Não foi possível determinar o fuso horário da cidade informada.")
 

@@ -88,3 +88,10 @@ def test_feature_api_routes_are_scoped():
 def test_unknown_tarot_spread_returns_validation_error():
     response = client.post("/tarot/reading", json={"reading_type": "unknown"})
     assert response.status_code == 422
+
+
+def test_renamed_chakra_note_resolves_to_audio():
+    """Regression: crown chakra was misspelled 'Sarashara', breaking the audio lookup."""
+    from features.sound.app.engine import generate_audio
+    assert generate_audio("Sahasrara") is not None
+    assert client.get("/sound/").text.count("Sarashara") == 0

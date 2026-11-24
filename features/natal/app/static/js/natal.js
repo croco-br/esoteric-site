@@ -165,7 +165,9 @@ function degreeLabel(position) {
 }
 
 function birthLine(birth) {
-    return `Nascimento: <strong>${natalEscapeHtml(birth.date)}</strong> ${natalEscapeHtml(birth.time)} em ` +
+    const [y, m, d] = String(birth.date).split("-");
+    const brDate = /^\d{4}-\d{2}-\d{2}$/.test(birth.date) ? `${d}/${m}/${y}` : birth.date;
+    return `Nascimento: <strong>${natalEscapeHtml(brDate)}</strong> ${natalEscapeHtml(birth.time)} em ` +
            `<strong>${natalEscapeHtml(birth.city)}</strong> <small class="muted">(${natalEscapeHtml(birth.tz)})</small>`;
 }
 

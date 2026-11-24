@@ -15,18 +15,18 @@ const planets = [
 ];
 
 const zodiac = [
-    { symbol: '♈', name: 'Áries', desc: 'Começo impetuoso; melhor não esperar.' },
-    { symbol: '♉', name: 'Touro', desc: 'Passo firme; o valor está no que dura.' },
-    { symbol: '♊', name: 'Gêmeos', desc: 'Duas versões do mesmo caso; ouça as duas.' },
-    { symbol: '♋', name: 'Câncer', desc: 'Casa, família e o cuidado que sustenta.' },
-    { symbol: '♌', name: 'Leão', desc: 'Vista a coroa; a cena pede presença.' },
-    { symbol: '♍', name: 'Virgem', desc: 'O detalhe pequeno decide o todo.' },
-    { symbol: '♎', name: 'Libra', desc: 'Pesa os dois pratos antes de fechar.' },
-    { symbol: '♏', name: 'Escorpião', desc: 'Fundo do poço e a força de sair dele.' },
-    { symbol: '♐', name: 'Sagitário', desc: 'Horizonte largo; vale apostar longe.' },
-    { symbol: '♑', name: 'Capricórnio', desc: 'Escada degrau por degrau, sem pressa.' },
-    { symbol: '♒', name: 'Aquário', desc: 'O inesperado chega por pessoas diferentes.' },
-    { symbol: '♓', name: 'Peixes', desc: 'Corrente subterrânea; confie no que se sente.' }
+    { symbol: '♈\uFE0E', name: 'Áries', desc: 'Começo impetuoso; melhor não esperar.' },
+    { symbol: '♉\uFE0E', name: 'Touro', desc: 'Passo firme; o valor está no que dura.' },
+    { symbol: '♊\uFE0E', name: 'Gêmeos', desc: 'Duas versões do mesmo caso; ouça as duas.' },
+    { symbol: '♋\uFE0E', name: 'Câncer', desc: 'Casa, família e o cuidado que sustenta.' },
+    { symbol: '♌\uFE0E', name: 'Leão', desc: 'Vista a coroa; a cena pede presença.' },
+    { symbol: '♍\uFE0E', name: 'Virgem', desc: 'O detalhe pequeno decide o todo.' },
+    { symbol: '♎\uFE0E', name: 'Libra', desc: 'Pesa os dois pratos antes de fechar.' },
+    { symbol: '♏\uFE0E', name: 'Escorpião', desc: 'Fundo do poço e a força de sair dele.' },
+    { symbol: '♐\uFE0E', name: 'Sagitário', desc: 'Horizonte largo; vale apostar longe.' },
+    { symbol: '♑\uFE0E', name: 'Capricórnio', desc: 'Escada degrau por degrau, sem pressa.' },
+    { symbol: '♒\uFE0E', name: 'Aquário', desc: 'O inesperado chega por pessoas diferentes.' },
+    { symbol: '♓\uFE0E', name: 'Peixes', desc: 'Corrente subterrânea; confie no que se sente.' }
 ];
 
 const numbers = [
@@ -113,6 +113,7 @@ function rollDice() {
         });
         readingText.textContent = buildReading(drawn);
         reading.hidden = false;
+        reading.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         button.disabled = false;
         button.removeAttribute('aria-disabled');
         button.removeAttribute('data-state');

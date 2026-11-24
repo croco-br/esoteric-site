@@ -128,6 +128,7 @@ async function calculate() {
                 <strong>Erro:</strong> ${escapeHtml(err.message)}
             </div>`;
         status.textContent = 'Não foi possível calcular o resultado. Reveja os dados e tente novamente.';
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } finally {
         button.disabled = false;
     }
