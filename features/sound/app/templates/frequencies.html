@@ -3,7 +3,7 @@
 {% block title %}Frequências · Gerador de Sons{% endblock %}
 
 {% block js %}
-<script type="module" src="{{ url_for('sound:static', path='js/frequencies.js') }}" defer></script>
+<script type="module" src="{{ static_url(request, 'js/frequencies.js') }}" defer></script>
 {% endblock %}
 
 {% block content %}

@@ -3,7 +3,7 @@
 {% block title %}Chakras · Gerador de Sons{% endblock %}
 
 {% block js %}
-<script type="module" src="{{ url_for('sound:static', path='js/chakras.js') }}" defer></script>
+<script type="module" src="{{ static_url(request, 'js/chakras.js') }}" defer></script>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
 
         <div class="chakra-layout">
             <div class="image-map text-center">
-                <img src="/sound/static/img/chakras.jpg" alt="Ilustração dos sete chakras, do coronário ao básico"
+                <img src="{{ static_url(request, 'img/chakras.jpg') }}" alt="Ilustração dos sete chakras, do coronário ao básico"
                     id="img-chakra" usemap="#soundMap" width="1000" height="700" class="thumbnail">
                 <map name="soundMap">
                     <area shape="rect" coords="4,38,996,113" title="Sahasrara" href="#" data-note="Sahasrara">

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Oráculo Astrológico{% endblock %}</title>
-    <link rel="stylesheet" href="/oracle/static/styles.css">
+    <link rel="stylesheet" href="{{ static_url(request, 'styles.css') }}">
     <link rel="stylesheet" href="/site.css">
-    <script src="/oracle/static/script.js" defer></script>
+    <script src="{{ static_url(request, 'script.js') }}" defer></script>
 </head>
 <body>
     <nav class="unified-nav" aria-label="Navegação principal">

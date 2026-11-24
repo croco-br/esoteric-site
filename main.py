@@ -4,8 +4,8 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
 from features.tarot.engine import generate_reading
+from features.static_url import fingerprinted
 from features.sound.app.main import app as sound_app
 from features.oracle.app.main import app as oracle_app
 from features.natal.app.main import app as natal_app
@@ -13,6 +13,10 @@ from features.natal.app.main import app as natal_app
 ROOT = Path(__file__).resolve().parent
 app = FastAPI(title="Casa Arcana", description="Um espaço para explorar símbolos, céu e som.")
 templates = Jinja2Templates(directory=ROOT / "templates")
+tarot_templates = Jinja2Templates(directory=ROOT / "features" / "tarot" / "templates")
+tarot_templates.env.globals["static_url"] = fingerprinted(
+    ROOT / "features" / "tarot" / "static", "tarot-static"
+)
 
 app.mount(
     "/tarot/static",
@@ -53,7 +57,6 @@ async def tarot_reading(request: Request):
 
 @app.get("/tarot/", response_class=HTMLResponse)
 async def tarot_page(request: Request):
-    tarot_templates = Jinja2Templates(directory=ROOT / "features" / "tarot" / "templates")
     return tarot_templates.TemplateResponse(
         "index.html", {"request": request, "static_prefix": "/tarot/static"}
     )

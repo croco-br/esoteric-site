@@ -162,6 +162,10 @@ body > footer:not(.site-footer):not(.foot-mast):not(.colophon) { width: min(100%
 .image-map { width: 100%; text-align: center; }
 .image-map .thumbnail { width: 100%; height: auto; border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
 .chakra-quick-picks { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-block: .25rem .75rem; }
+/* 7 chips can never wrap evenly; on narrow screens keep one tappable row. */
+@media (max-width: 720px) {
+    .chakra-quick-picks { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; }
+}
 .chakra-chip.is-playing { background: var(--color-accent); color: var(--color-accent-ink); }
 .audio-with-spinner { width: 100%; display: grid; justify-items: center; gap: .75rem; }
 .audio-with-spinner audio { width: 100%; }

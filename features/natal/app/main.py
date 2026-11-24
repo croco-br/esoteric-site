@@ -1,4 +1,3 @@
-from hashlib import blake2s
 from pathlib import Path
 
 from fastapi import FastAPI
@@ -7,6 +6,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.requests import Request
 from fastapi.staticfiles import StaticFiles
 
+from features.static_url import fingerprinted
 from features.natal.app.engine import calculate_chart
 from features.natal.app.models import ChartRequest
 from features.natal.app.glossary import as_dict as glossary_dict
@@ -19,13 +19,7 @@ STATIC_DIR = FEATURE_DIR / "app" / "static"
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
-def static_url(request: Request, path: str) -> str:
-    """Return a content-fingerprinted static URL for safe long-lived caching."""
-    digest = blake2s((STATIC_DIR / path).read_bytes(), digest_size=8).hexdigest()
-    return f"{request.url_for('natal:static', path=path)}?v={digest}"
-
-
-templates.env.globals["static_url"] = static_url
+templates.env.globals["static_url"] = fingerprinted(STATIC_DIR, "natal:static")
 
 
 @app.get("/", response_class=HTMLResponse)
