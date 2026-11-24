@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
@@ -5,16 +7,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.concurrency import run_in_threadpool
 
-from pathlib import Path
-
+from features.static_url import fingerprinted
 from features.sound.app.engine import generate_audio
 
 app = FastAPI()
-app.add_middleware(GZipMiddleware, minimum_size=1024)
 
 FEATURE_DIR = Path(__file__).resolve().parent.parent
 templates = Jinja2Templates(directory=FEATURE_DIR / "app" / "templates")
 app.mount("/static", StaticFiles(directory=FEATURE_DIR / "app" / "static"), name="static")
+
+
+templates.env.globals["static_url"] = fingerprinted(FEATURE_DIR / "app" / "static", "sound:static")
 
 
 @app.get("/", response_class=HTMLResponse)

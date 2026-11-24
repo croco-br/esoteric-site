@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#211f35">
     <title>{% block title %}Gerador de Sons{% endblock %}</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%238b5cf6'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="{{ url_for('sound:static', path='css/app.css') }}">
+    <link rel="stylesheet" href="{{ static_url(request, 'css/app.css') }}">
     {% block css %}{% endblock %}
     <link rel="stylesheet" href="/site.css">
     {% block js %}{% endblock %}

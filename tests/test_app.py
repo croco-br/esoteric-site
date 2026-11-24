@@ -17,7 +17,7 @@ def test_home_links_all_practices():
 
 
 def test_primary_navigation_is_consistent_across_features():
-    expected = ["Casa Arcana", "Oráculo", "Mapa astral", "Tarot", "Chakras", "Frequências"]
+    expected = ["Casa Arcana", "Oráculo", "Mapa astral", "Tarot", "Chakras", "Frequências", "Glossário"]
     pages = ("/", "/sound/", "/sound/frequencies", "/oracle/", "/natal/", "/natal/glossary", "/tarot/")
     for path in pages:
         response = client.get(path)
@@ -95,3 +95,34 @@ def test_renamed_chakra_note_resolves_to_audio():
     from features.sound.app.engine import generate_audio
     assert generate_audio("Sahasrara") is not None
     assert client.get("/sound/").text.count("Sarashara") == 0
+
+
+def test_feature_static_assets_are_content_fingerprinted():
+    """Static subresources must carry a ?v= digest so browsers never serve stale JS/CSS."""
+    import re
+    for path in ("/oracle/", "/sound/", "/sound/frequencies", "/natal/", "/tarot/"):
+        html = client.get(path).text
+        attrs = re.findall(r'(?:src|href)="([^"]*/(?:oracle|sound|tarot|natal)/static/[^"]+)"', html)
+        assert attrs, path
+        for url in attrs:
+            assert re.search(r"\?v=[0-9a-f]{16}$", url), (path, url)
+            assert client.get(url).status_code == 200, url
+
+
+def test_geocoder_outage_reports_portuguese_error(monkeypatch):
+    """User-visible 503 must be pt-BR, never the raw English exception text."""
+    from geopy.exc import GeocoderServiceError
+    from features.natal.app import geocoder
+
+    def boom(self, query):
+        raise GeocoderServiceError("network down")
+
+    monkeypatch.setattr(geocoder.Nominatim, "geocode", boom)
+    response = client.post("/natal/calculate", json={
+        "date": "1990-05-12", "time": "14:30",
+        "city": "Xyzzyville Nowhere", "name": None, "method": "traditional",
+    })
+    assert response.status_code == 503
+    message = response.json()["error"]
+    assert "Serviço de localização" in message
+    assert "Location service" not in message

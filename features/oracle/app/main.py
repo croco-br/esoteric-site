@@ -8,11 +8,17 @@ from fastapi.responses import (
 from fastapi.requests import Request
 from fastapi.staticfiles import StaticFiles
 
+from features.static_url import fingerprinted
+
 app = FastAPI()
 
 FEATURE_DIR = Path(__file__).resolve().parent.parent
+STATIC_DIR = FEATURE_DIR / "app" / "static"
 templates = Jinja2Templates(directory=FEATURE_DIR / "app" / "templates")
-app.mount("/static", StaticFiles(directory=FEATURE_DIR / "app" / "static"), name="static")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+templates.env.globals["static_url"] = fingerprinted(STATIC_DIR, "oracle:static")
 
 
 @app.get("/", response_class=HTMLResponse)
