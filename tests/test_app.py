@@ -17,7 +17,7 @@ def test_home_links_all_practices():
 
 
 def test_primary_navigation_is_consistent_across_features():
-    expected = ["Casa Arcana", "Oráculo", "Mapa astral", "Tarot", "Chakras", "Frequências"]
+    expected = ["Casa Arcana", "Oráculo", "Mapa astral", "Tarot", "Chakras", "Frequências", "Glossário"]
     pages = ("/", "/sound/", "/sound/frequencies", "/oracle/", "/natal/", "/natal/glossary", "/tarot/")
     for path in pages:
         response = client.get(path)
